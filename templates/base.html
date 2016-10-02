@@ -70,6 +70,18 @@
 
         <div ng-view class="container"></div>
 
+
+         <div class="col-md-4">
+            <div id="status" ng-controller="statusController">
+                <h5 class="center-align">Filter by status</h5>
+                <div class="card-panel">
+                    <p ng-repeat="status in status_list">
+                        <input type="checkbox" id="{{status.name}}" ng-model="status.selected"/>
+                        <label for="{{status.name}}">{{status.value}}</label>
+                    </p>
+                </div>
+            </div>
+
  <!--        <div class="container code_block_container">
             <div class="row">
                 <div class="col-sm-8">
