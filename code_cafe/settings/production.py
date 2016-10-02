@@ -1,4 +1,4 @@
-
+from base import *
 import os
 from django.conf import settings
 
