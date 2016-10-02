@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="code_container">
+                <form class="form-inline" role="form">
+                    <div class="input-group" style="width:400px">
+                        <input type="text" ng-model="query" class="form-control" name="q" placeholder="Search(by title, level or language)">
+                        <span class="input-group-btn">
+                          <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </form>
+                <br/>
+                   
+                <div data-ng-repeat="code in codes | filter:query ">
+            	    <div class="well code_block">
+            	        	<div class="well" style="background-color:#6e3d00;color:white">{{code.title}}
+                                <span class="language">{{code.language}}</span>
+                            </div>
+
+            	        <pre>
+            	        	<code>
+                                <span class="compiler_status">{{code.compiler_status}}</span>
+            	           		{{code.source_code}}
+                            
+            	            </code>
+            	        </pre>
+            	               
+            	    </div>
+               </div> 
+            </div>	
+        </div>    
+
+        <div class="col-md-4">
+            <div id="status" ng-controller="statusController">
+                <h5 class="center-align">Filter by status</h5>
+                <div class="card-panel">
+                    <p ng-repeat="status in status_list">
+                        <input type="checkbox" id="{{status.name}}" ng-model="status.selected"/>
+                        <label for="{{status.name}}">{{status.value}}</label>
+                    </p>
+                </div>
+            </div>
+           <!--  <div id="analysis" ng-controller="analysisController">
+                <h5 class="center-align">Statical Analysis</h5>
+                <div class="card-panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-field="id">Top 5 languages used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="codeinfo in analysisValue">
+                                <td>{{codeinfo.language}}</td>
+                                <td>{{codeinfo.users_attempted}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-field="id">Top 3 submission attempted</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-controller="submissionController">
+                            <tr ng-repeat="subValue in submissionValue">
+                                <td>{{subValue.problem}}</td>
+                                <td>{{subValue.count}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-field="id">Number of submission per level</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-controller="levelController">
+                            <tr ng-repeat="levelInfo in levelValues">
+                                <td>{{levelInfo.level}}</td>
+                                <td>{{levelInfo.count}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-field="id">Total Submission</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Submission</td>
+                                <td>12,321</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>    
+
+
+

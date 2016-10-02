@@ -1,0 +1,1 @@
+/home/pycon/Desktop/cognizant_challenge/code_cafe/manage.py

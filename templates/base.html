@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <head>
+ 
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script> 
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.3/angular-resource.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.5/angular-messages.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+       
+<!--         <script src="{% static 'js/controller/detailsController.js' %}"></script>  -->
+        
+         <!-- Custom files -->
+        <script src="{% static 'js/app.module.js' %}"></script>
+        <script src="{% static 'js/app.config.js' %}"></script>
+        <!-- Core -->
+        <script src="{% static 'js/core/core.module.js' %}"></script>
+        <script src="{% static 'js/core/constants.js' %}"></script>
+        <!-- code -->
+        <script src="{% static 'js/code/code.module.js' %}"></script>
+        <script src="{% static 'js/code/config.route.js' %}"></script>
+        <script src="{% static 'js/code/code.controller.js' %}"></script>
+        <script src="{% static 'js/code/code.service.js' %}"></script>
+        <!-- status -->
+        <script src="{% static 'js/status/status.module.js' %}"></script>
+        <script src="{% static 'js/status/status.controller.js' %}"></script>
+       
+        <!-- Notify -->
+      <!--   <script src="{% static 'js/notify/notify.module.js' %}"></script>
+        <script src="{% static 'js/notify/notify.controller.js' %}"></script>
+        <script src="{% static 'js/notify/notify.service.js' %}"></script> -->
+
+        <!-- third_party css -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'css/code.css' %}">
+
+        <!-- Latest compiled and minified JavaScript -->
+       
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container"> 
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">Code Cafe - code hub with stats!</a>
+                </div>
+            </div> 
+        </nav> 
+
+
+        <div ng-view class="container"></div>
+
+ <!--        <div class="container code_block_container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="code_block">
+                        <div ng-controller="codeController">
+                            <div ng-repeat="code in codes">
+                                <h4 style="color:green;">{{code.title}}</h4>
+                                <div class="well">
+                                    {{code.source_code}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>   -->  
+                           
+    </body>
+
+</html>

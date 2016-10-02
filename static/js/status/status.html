@@ -1,0 +1,9 @@
+ <div id="status" ng-controller="statusController">
+	<h5 class="center-align">Filter by status</h5>
+	<div class="card-panel">
+	    <p ng-repeat="status in allStatus">
+	        <input type="checkbox" id="{{status.name}}" ng-model="status.selected"/>
+	        <label for="{{status.name}}">{{status.value}}</label>
+	    </p>
+	</div>
+</div>
