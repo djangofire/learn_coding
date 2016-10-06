@@ -21,7 +21,7 @@
             	        <pre>
             	        	<code>
                                 <span class="compiler_status">{{code.compiler_status}}</span>
-            	           		{{code.source_code}}
+            	           		<strong>{{code.source_code}}</strong>
                             
             	            </code>
             	        </pre>
@@ -29,69 +29,61 @@
             	    </div>
                </div> 
             </div>	
-        </div>    
+        </div>  
 
-       
-           <!--  <div id="analysis" ng-controller="analysisController">
-                <h5 class="center-align">Statical Analysis</h5>
-                <div class="card-panel">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-field="id">Top 5 languages used</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="codeinfo in analysisValue">
-                                <td>{{codeinfo.language}}</td>
-                                <td>{{codeinfo.users_attempted}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-field="id">Top 3 submission attempted</th>
-                            </tr>
-                        </thead>
-                        <tbody ng-controller="submissionController">
-                            <tr ng-repeat="subValue in submissionValue">
-                                <td>{{subValue.problem}}</td>
-                                <td>{{subValue.count}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-field="id">Number of submission per level</th>
-                            </tr>
-                        </thead>
-                        <tbody ng-controller="levelController">
-                            <tr ng-repeat="levelInfo in levelValues">
-                                <td>{{levelInfo.level}}</td>
-                                <td>{{levelInfo.count}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-field="id">Total Submission</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Total Submission</td>
-                                <td>12,321</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+        <div class="col-md-4">
+            <div class="actWrap">
+                <h3 class="well" style="margin-top:100px;">FilterBy Status</h3>
+               <div class="form-group" >
+                  <div class="checkbox blockDisplay" id="checkFilterGrp">
+                        <label>
+                          <input type="checkbox" value="Accepted" ng-model="filterString1"> Accepted
+                        </label>
+                        <label>
+                          <input type="checkbox" value="Skipped" ng-model="filterString2"> Skipped
+                        </label>
+                          <label>
+                          <input type="checkbox" value="Memory Time" ng-model="filterString3"> Memory/time limit exceeded
+                        </label>
+                          <label>
+                          <input type="checkbox" value="Runtime Compilation" ng-model="filterString4"> Runtime/compilation error
+                        </label>
+                           <label>
+                          <input type="checkbox" value="Wrong Answer" ng-model="filterString5"> Wrong answer
+                        </label>
+                    </div>
                 </div>
-            </div> -->
-        </div>
+            </div>
+        
+            <div id="InfoPart">
+                <h3 class="well">Statistics</h3>
+                <div class="actWrap">
+                    <h3>Top 5 Languages used:</h3>
+                    <table>
+                    <tr ng-repeat="topLang in BestLangList">
+                        <td><b>{{topLang.langName}}</b></td><td>{{topLang.count}}</td>
+                    </tr>
+                    </table>
+                    <h3>Top 2 Submissions attempted:</h3>
+                    <table>
+                    <tr ng-repeat="submits in BestSubmitList">
+                        <td>{{submits.title}}</td><td>{{submits.attempts}}</td>
+                    </tr>
+                    </table>
+                    <h3>Number of submissions per level:</h3>
+                    <table>
+                    <tr ng-repeat="submitOverview in BestSubmitLevelList">
+                        <td><b>{{submitOverview.level}}</b></td><td>{{submitOverview.submission}}</td>
+                    </tr>
+                    </table>
+                    <h3>Total Submissions: {{totalCount}}</h3>
+                </div>
+            </div>
+        </div>    
     </div>
-</div>    
+</div>
+     
 
 
 

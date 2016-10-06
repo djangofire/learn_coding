@@ -15,8 +15,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-       
-<!--         <script src="{% static 'js/controller/detailsController.js' %}"></script>  -->
         
          <!-- Custom files -->
         <script src="{% static 'js/app.module.js' %}"></script>
@@ -62,43 +60,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#/">Code Cafe - code hub with stats!</a>
+                    <a class="navbar-brand" href="#/"><img src="{% static 'images/code-cafe.jpg' %}" width="200" height="60"/><span style="color:green;">Code Cafe-code hub with stats!</span></a>
                 </div>
             </div> 
         </nav> 
 
 
         <div ng-view class="container"></div>
-
-
-         <div class="col-md-4">
-            <div id="status" ng-controller="statusController">
-                <h5 class="center-align">Filter by status</h5>
-                <div class="card-panel">
-                    <p ng-repeat="status in status_list">
-                        <input type="checkbox" id="{{status.name}}" ng-model="status.selected"/>
-                        <label for="{{status.name}}">{{status.value}}</label>
-                    </p>
-                </div>
-            </div>
-
- <!--        <div class="container code_block_container">
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="code_block">
-                        <div ng-controller="codeController">
-                            <div ng-repeat="code in codes">
-                                <h4 style="color:green;">{{code.title}}</h4>
-                                <div class="well">
-                                    {{code.source_code}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>   -->  
                            
     </body>
 
